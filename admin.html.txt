@@ -1,0 +1,57 @@
+admin.html
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Administrador</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{font-family:Arial;background:#eee;padding:20px}
+.card{background:#fff;padding:20px;border-radius:10px}
+input,textarea{width:100%;padding:10px;margin:8px 0}
+button{background:#c40000;color:#fff;border:none;padding:12px;width:100%;font-size:16px}
+</style>
+</head>
+<body>
+
+<div class="card">
+<h2>Administrador – Logística Express MX</h2>
+
+<input id="title" placeholder="Título de la página">
+<input id="subtitle" placeholder="Subtítulo">
+
+<textarea id="services" rows="4" placeholder="Servicios (uno por línea)"></textarea>
+<textarea id="contact" rows="4" placeholder="Contacto"></textarea>
+
+<input id="footer" placeholder="Texto del pie de página">
+
+<button onclick="save()">Guardar cambios</button>
+</div>
+
+<script>
+title.value = localStorage.title || "Logística Express MX";
+subtitle.value = localStorage.subtitle || "Envíos rápidos y seguros en México";
+
+services.value = (localStorage.services || 
+"• Envíos Express\n• Paquetería\n• Logística Empresarial"
+).replace(/<br>/g,"\n");
+
+contact.value = (localStorage.contact || 
+"📞 Tel: 55 0000 0000\n📧 contacto@logisticaexpressmx.com"
+).replace(/<br>/g,"\n");
+
+footer.value = localStorage.footer || "© 2025 Logística Express MX";
+
+function save(){
+ localStorage.title = title.value;
+ localStorage.subtitle = subtitle.value;
+ localStorage.services = services.value.replace(/\n/g,"<br>");
+ localStorage.contact = contact.value.replace(/\n/g,"<br>");
+ localStorage.footer = footer.value;
+ alert("Cambios guardados correctamente");
+}
+</script>
+
+</body>
+</html>

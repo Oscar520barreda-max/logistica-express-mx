@@ -1,0 +1,50 @@
+index.html
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Logística Express MX</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{font-family:Arial;margin:0;background:#f2f2f2}
+header{background:#c40000;color:#fff;padding:40px;text-align:center}
+section{padding:30px}
+.card{background:#fff;padding:20px;border-radius:10px;margin-bottom:20px}
+footer{background:#111;color:#fff;text-align:center;padding:15px}
+</style>
+</head>
+<body>
+
+<header>
+<h1 id="title">Logística Express MX</h1>
+<p id="subtitle">Envíos rápidos y seguros en México</p>
+</header>
+
+<section class="card">
+<h2>Servicios</h2>
+<p id="services"></p>
+</section>
+
+<section class="card">
+<h2>Contacto</h2>
+<p id="contact"></p>
+</section>
+
+<footer>
+<p id="footer">© 2025 Logística Express MX</p>
+</footer>
+
+<script>
+services.innerHTML = localStorage.services || "• Envíos Express<br>• Paquetería<br>• Logística Empresarial";
+contact.innerHTML = localStorage.contact || "📞 Tel: 55 0000 0000<br>📧 contacto@logisticaexpressmx.com";
+
+if(localStorage.title){
+ title.innerText = localStorage.title;
+ subtitle.innerText = localStorage.subtitle;
+ footer.innerText = localStorage.footer;
+}
+</script>
+
+</body>
+</html>
